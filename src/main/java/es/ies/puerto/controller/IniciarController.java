@@ -1,8 +1,13 @@
 package es.ies.puerto.controller;
 
+import java.sql.SQLException;
+
 import es.ies.puerto.controller.pantalla.Pantalla;
+import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 /**
  * @author alexfdb
@@ -16,11 +21,37 @@ public class IniciarController extends Pantalla {
     private Button buttonRegistrar;
     @FXML
     private Button buttonRecuperar;
+    @FXML
+    private TextField textFieldUsuario;
+    @FXML
+    private TextField passwordFieldContrasenia;
+    @FXML
+    private Text textMensaje;
+
+    private UsuarioManager uManager;
+
+    /**
+     * Constructor general.
+     * 
+     * @throws SQLException error controlado.
+     */
+    public IniciarController() throws SQLException {
+        this.uManager = new UsuarioManager();
+    }
 
     /**
      * Cambia a la pantalla nivel.
      */
     public void buttonAceptarClick() {
+        if (!validarCampos()) {
+            textMensaje.setText("Credenciales invalidas");
+            return;
+        }
+        if (!uManager.iniciarSesion(textFieldUsuario.getText(), passwordFieldContrasenia.getText())) {
+            textMensaje.setText("Credenciales incorrectas");
+            return;
+        }
+        textMensaje.setText("");
         pantallaNivel(buttonAceptar);
     }
 
@@ -36,6 +67,16 @@ public class IniciarController extends Pantalla {
      */
     public void buttonRecuperarClick() {
         pantallaRecuperar(buttonRecuperar);
+    }
+
+    /**
+     * Valida que los campos no sean null ni esten vacios.
+     * 
+     * @return retorna true si los campos son validados.
+     */
+    private boolean validarCampos() {
+        return textFieldUsuario != null && !textFieldUsuario.getText().isBlank() &&
+                passwordFieldContrasenia != null && !passwordFieldContrasenia.getText().isBlank();
     }
 
 }
