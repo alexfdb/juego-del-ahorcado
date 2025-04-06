@@ -1,6 +1,8 @@
 package es.ies.puerto.controller;
 
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import es.ies.puerto.controller.pantalla.PantallaController;
 import es.ies.puerto.model.Usuario;
@@ -49,6 +51,10 @@ public class RegistrarController extends PantallaController {
             textMensaje.setText("Credenciales invalidas");
             return;
         }
+        if (!validarEmail()) {
+            textMensaje.setText("El formato del email es incorrecto");
+            return;
+        }
         Usuario usuario = new Usuario(textFieldUsuario.getText(), passwordFieldContrasenia.getText(), textFieldEmail.getText());
         uManager.crearUsuario(usuario);
         textMensaje.setText("Registro correcto");
@@ -59,6 +65,18 @@ public class RegistrarController extends PantallaController {
      */
     public void buttonRegresarClick() {
         pantallaIniciar(buttonRegresar);
+    }
+
+    /**
+     * Valida que el formato del email sea el correcto.
+     * 
+     * @return retorna true si el formato es correcto.
+     */
+    private boolean validarEmail() {
+        String patron = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        Pattern pattern = Pattern.compile(patron);
+        Matcher matcher = pattern.matcher(textFieldEmail.getText());
+        return matcher.matches();
     }
 
     /**
