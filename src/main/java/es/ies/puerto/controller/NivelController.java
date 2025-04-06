@@ -1,6 +1,6 @@
 package es.ies.puerto.controller;
 
-import es.ies.puerto.controller.pantalla.Pantalla;
+import es.ies.puerto.controller.pantalla.PantallaController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
  * @author alexfdb
  * @version 1.0.0
  */
-public class NivelController extends Pantalla {
+public class NivelController extends PantallaController {
 
     @FXML
     private Button buttonEditar;

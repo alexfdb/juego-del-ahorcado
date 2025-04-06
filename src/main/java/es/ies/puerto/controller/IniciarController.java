@@ -2,7 +2,7 @@ package es.ies.puerto.controller;
 
 import java.sql.SQLException;
 
-import es.ies.puerto.controller.pantalla.Pantalla;
+import es.ies.puerto.controller.pantalla.PantallaController;
 import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,20 +13,20 @@ import javafx.scene.text.Text;
  * @author alexfdb
  * @version 1.0.0
  */
-public class IniciarController extends Pantalla {
+public class IniciarController extends PantallaController {
 
-    @FXML
-    private Button buttonAceptar;
-    @FXML
-    private Button buttonRegistrar;
-    @FXML
-    private Button buttonRecuperar;
     @FXML
     private TextField textFieldUsuario;
     @FXML
     private TextField passwordFieldContrasenia;
     @FXML
     private Text textMensaje;
+    @FXML
+    private Button buttonAceptar;
+    @FXML
+    private Button buttonRegistrar;
+    @FXML
+    private Button buttonRecuperar;
 
     private UsuarioManager uManager;
 

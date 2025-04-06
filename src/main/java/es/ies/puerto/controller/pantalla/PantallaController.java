@@ -10,7 +10,7 @@ import javafx.stage.Stage;
  * @author alexfdb
  * @version 1.0.0
  */
-public abstract class Pantalla {
+public abstract class PantallaController {
 
     /**
      * Ejecuta el cambio de pantalla.
