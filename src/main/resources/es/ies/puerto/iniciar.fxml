@@ -52,9 +52,14 @@
             <Insets top="30.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="buttonRecuperar" minWidth="120.0" mnemonicParsing="false" onAction="#buttonRecuperarClick" text="Recuperar Contraseña">
+      <Button fx:id="buttonUsuarios" minWidth="165.0" mnemonicParsing="false" onAction="#buttonUsuariosClick" text="Usuarios">
          <VBox.margin>
-            <Insets top="110.0" />
+            <Insets top="30.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="buttonRecuperar" minWidth="160.0" mnemonicParsing="false" onAction="#buttonRecuperarClick" text="Recuperar Contraseña">
+         <VBox.margin>
+            <Insets top="30.0" />
          </VBox.margin>
       </Button>
    </children>

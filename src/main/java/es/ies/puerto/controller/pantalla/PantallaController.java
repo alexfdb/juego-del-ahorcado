@@ -75,4 +75,13 @@ public abstract class PantallaController {
         cambiarPantalla(button, "jugar.fxml");
     }
 
+    /**
+     * Cambia a la pantalla usuarios.
+     * 
+     * @param button boton a ejecutar.
+     */
+    public void pantallaUsuarios(Button button) {
+        cambiarPantalla(button, "usuarios.fxml");
+    }
+
 }

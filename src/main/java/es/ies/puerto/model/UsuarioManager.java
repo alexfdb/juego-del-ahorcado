@@ -3,6 +3,8 @@ package es.ies.puerto.model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import es.ies.puerto.model.database.DatabaseManager;
 
@@ -139,6 +141,30 @@ public class UsuarioManager extends DatabaseManager {
             e.printStackTrace();
         }
         return false;
+    }
+
+    /**
+     * Obtiene todos los usuarios.
+     * 
+     * @return retorna todos los usuarios.
+     * @throws SQLException error controlado.
+     */
+    public List<Usuario> obtenerUsuarios() throws SQLException {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        String sql = "SELECT * FROM Usuario";
+        try (PreparedStatement sentencia = conectar().prepareStatement(sql);
+                ResultSet resultSet = sentencia.executeQuery()) {
+            while (resultSet.next()) {
+                String nombre = resultSet.getString("nombre");
+                String contrasenia = resultSet.getString("contrasenia");
+                String email = resultSet.getString("email");
+                Usuario usuario = new Usuario(nombre, contrasenia, email);
+                usuarios.add(usuario);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return usuarios;
     }
     
 }

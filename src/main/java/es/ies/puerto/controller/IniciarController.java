@@ -26,6 +26,8 @@ public class IniciarController extends PantallaController {
     @FXML
     private Button buttonRegistrar;
     @FXML
+    private Button buttonUsuarios;
+    @FXML
     private Button buttonRecuperar;
 
     private UsuarioManager uManager;
@@ -60,6 +62,13 @@ public class IniciarController extends PantallaController {
      */
     public void buttonRegistrarClick() {
         pantallaRegistrar(buttonRegistrar);
+    }
+
+    /**
+     * Cambia a la pantalla usuarios.
+     */
+    public void buttonUsuariosClick() {
+        pantallaUsuarios(buttonUsuarios);
     }
 
     /**

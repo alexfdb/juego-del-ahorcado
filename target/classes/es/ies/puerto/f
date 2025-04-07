@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.IniciarController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.UsuariosController">
    <children>
       <HBox prefHeight="50.0" prefWidth="200.0">
          <VBox.margin>
@@ -52,14 +52,9 @@
             <Insets top="30.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="buttonUsuarios" minWidth="165.0" mnemonicParsing="false" onAction="#buttonUsuariosClick" text="Usuarios">
+      <Button fx:id="buttonRecuperar" minWidth="120.0" mnemonicParsing="false" onAction="#buttonRecuperarClick" text="Recuperar Contraseña">
          <VBox.margin>
-            <Insets top="30.0" />
-         </VBox.margin>
-      </Button>
-      <Button fx:id="buttonRecuperar" minWidth="160.0" mnemonicParsing="false" onAction="#buttonRecuperarClick" text="Recuperar Contraseña">
-         <VBox.margin>
-            <Insets top="30.0" />
+            <Insets top="110.0" />
          </VBox.margin>
       </Button>
    </children>
