@@ -3,6 +3,7 @@ package es.ies.puerto.controller;
 import es.ies.puerto.controller.pantalla.PantallaController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * @author alexfdb
@@ -10,6 +11,12 @@ import javafx.scene.control.Button;
  */
 public class NivelController extends PantallaController {
 
+    @FXML
+    private TextField textFieldUsuario;
+    @FXML
+    private TextField textFieldEmail;
+    @FXML
+    private TextField textFieldNivel;
     @FXML
     private Button buttonEditar;
     @FXML
