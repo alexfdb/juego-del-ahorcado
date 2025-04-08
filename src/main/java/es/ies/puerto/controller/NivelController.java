@@ -27,8 +27,14 @@ public class NivelController extends PantallaController {
     @FXML
     private Button buttonRegresar;
 
+    private String dificultad;
+
+    public NivelController() {
+        this.dificultad = "Facil";
+    }
+
     public void initialize() {
-        comboBoxDificultad.getItems().addAll("Facil", "Medio", "Dificil");
+        comboBoxDificultad.getItems().addAll("Facil", "Normal", "Dificil");
     }
 
     public String palabra() {
@@ -39,8 +45,7 @@ public class NivelController extends PantallaController {
      * Cambia el valor de la dificultad.
      */
     public void comboBoxDificultadClick() {
-        JugarController jController = new JugarController();
-        jController.setDificultad(comboBoxDificultad.getValue().toString());
+        dificultad = comboBoxDificultad.getValue().toString();
     }
 
     /**
@@ -54,7 +59,9 @@ public class NivelController extends PantallaController {
      * Cambia a la pantalla jugar.
      */
     public void buttonJugarClick() {
-        pantallaJugar(buttonJugar);
+        JugarController controller = (JugarController) pantallaJugar(buttonJugar);
+        controller.setTextDificultad(dificultad);
+        
     }
 
     /**

@@ -1,0 +1,27 @@
+VBox {
+    -fx-background-color: #FAF0E6;
+}
+
+Button {
+    -fx-background-color: #E4CBA7;
+}
+
+Button:hover {
+    -fx-background-color: #D1B897;
+}
+
+Button:pressed {
+    -fx-background-color: #BFA488;
+}
+
+TextField {
+    -fx-border-color: #E4CBA7;
+}
+
+PasswordField {
+    -fx-border-color: #E4CBA7;
+}
+
+Separator .line {
+    -fx-background-color: #E4CBA7;
+}

@@ -1,9 +1,11 @@
 package es.ies.puerto.controller;
 
+import java.sql.SQLException;
+
 import es.ies.puerto.controller.pantalla.PantallaController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import java.util.Objects;
+import javafx.scene.text.Text;
 
 /**
  * @author alexfdb
@@ -12,20 +14,30 @@ import java.util.Objects;
 public class JugarController extends PantallaController {
 
     @FXML
+    private Text textUsuario;
+    @FXML
+    private Text textDificultad;
+    @FXML
+    private Text textPalabra;
+    @FXML
+    private Button buttonReiniciar;
+    @FXML
     private Button buttonRegresar;
 
-    private String dificultad;
-
+    @FXML
     public void initialize() {
-        this.dificultad = getDificultad();
+        textDificultad.setText("Facil");
     }
 
-    public String getDificultad() {
-        return this.dificultad;
+    @FXML
+    public void setTextDificultad(String dificultad) {
+        this.textDificultad.setText(dificultad);
     }
 
-    public void setDificultad(String dificultad) {
-        this.dificultad = dificultad;
+    /**
+     * Reinicia la palabra.
+     */
+    public void buttonReiniciarClick() {
     }
 
     /**

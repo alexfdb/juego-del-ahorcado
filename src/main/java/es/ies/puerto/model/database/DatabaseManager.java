@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * @author alexfdb
  * @version 1.0.0
  */
-public class DatabaseManager {
+public abstract class DatabaseManager {
     
     private String databasePath;
     private File file;

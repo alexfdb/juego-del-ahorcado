@@ -18,16 +18,18 @@ public abstract class PantallaController {
      * @param button   boton a ejecutar.
      * @param fxmlPath path del fxml.
      */
-    private void cambiarPantalla(Button button, String fxmlPath) {
+    private Object cambiarPantalla(Button button, String fxmlPath) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource(fxmlPath));
             Scene scene = new Scene(fxmlLoader.load(), 340, 640);
             Stage stage = (Stage) button.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
+            return fxmlLoader.getController();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     /**
@@ -35,8 +37,8 @@ public abstract class PantallaController {
      * 
      * @param button boton a ejecutar.
      */
-    public void pantallaIniciar(Button button) {
-        cambiarPantalla(button, "iniciar.fxml");
+    public Object pantallaIniciar(Button button) {
+        return cambiarPantalla(button, "iniciar.fxml");
     }
 
     /**
@@ -71,8 +73,8 @@ public abstract class PantallaController {
      * 
      * @param button boton a ejecutar.
      */
-    public void pantallaJugar(Button button) {
-        cambiarPantalla(button, "jugar.fxml");
+    public Object pantallaJugar(Button button) {
+        return cambiarPantalla(button, "jugar.fxml");
     }
 
     /**
