@@ -3,6 +3,7 @@ package es.ies.puerto.controller;
 import es.ies.puerto.controller.pantalla.PantallaController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 /**
@@ -18,11 +19,29 @@ public class NivelController extends PantallaController {
     @FXML
     private TextField textFieldNivel;
     @FXML
+    private ComboBox comboBoxDificultad;
+    @FXML
     private Button buttonEditar;
     @FXML
     private Button buttonJugar;
     @FXML
     private Button buttonRegresar;
+
+    public void initialize() {
+        comboBoxDificultad.getItems().addAll("Facil", "Medio", "Dificil");
+    }
+
+    public String palabra() {
+        return null;
+    }
+
+    /**
+     * Cambia el valor de la dificultad.
+     */
+    public void comboBoxDificultadClick() {
+        JugarController jController = new JugarController();
+        jController.setDificultad(comboBoxDificultad.getValue().toString());
+    }
 
     /**
      * Cambia a la pantalla registrar.
