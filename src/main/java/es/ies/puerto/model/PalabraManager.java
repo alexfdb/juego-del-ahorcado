@@ -30,7 +30,7 @@ public class PalabraManager extends DatabaseManager {
             case "Facil":
                 query = "SELECT palabra FROM usuario WHERE LENGTH(palabra) <= 5 LIMIT 1";
                 break;
-            case "Normal":
+            case "Medio":
                 query = "SELECT palabra FROM usuario WHERE LENGTH(palabra) BETWEEN 6 AND 10 LIMIT 1";
                 break;
             default:

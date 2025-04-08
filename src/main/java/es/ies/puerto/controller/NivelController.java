@@ -34,7 +34,7 @@ public class NivelController extends PantallaController {
     }
 
     public void initialize() {
-        comboBoxDificultad.getItems().addAll("Facil", "Normal", "Dificil");
+        comboBoxDificultad.getItems().addAll("Facil", "Medio", "Dificil");
     }
 
     public String palabra() {
